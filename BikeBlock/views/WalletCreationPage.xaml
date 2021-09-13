@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:BikeBlock"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:Class="BikeBlock.views.WalletCreationPage">
+    <ContentPage.Resources>
+        <Style TargetType="Entry">
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="TextColor" Value="Purple" />
+        </Style>
+        <Style x:Key="InvalidStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Red" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout >
+            <Entry Placeholder="Wallet Name" Text="{Binding Wallet.Name}"/>
+            <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True">
+                 <Entry.Behaviors>
+                    <xct:MultiValidationBehavior
+                    x:Name="PasswordValidator"
+                    InvalidStyle="{StaticResource InvalidStyle}">
+                    <xct:TextValidationBehavior MinimumLength="6"  />
+                    <xct:CharactersValidationBehavior CharacterType="Digit" MinimumCharacterCount="1" />
+                    <xct:CharactersValidationBehavior CharacterType="LowercaseLetter" MinimumCharacterCount="1" />
+                    <xct:CharactersValidationBehavior CharacterType="UppercaseLetter" MinimumCharacterCount="1" />
+                    <xct:CharactersValidationBehavior CharacterType="NonAlphanumericSymbol" MinimumCharacterCount="1" />
+                    <xct:CharactersValidationBehavior CharacterType="Whitespace" MaximumCharacterCount="0" />
+                    </xct:MultiValidationBehavior>
+                  </Entry.Behaviors>
+            </Entry>
+            <Entry Placeholder="Repeat Password" IsPassword="True">
+                <Entry.Behaviors>
+                    <xct:RequiredStringValidationBehavior
+                         x:Name="RepeatPasswordValidator"
+                         InvalidStyle="{StaticResource InvalidStyle}"
+                        RequiredString="{Binding Text, Source={x:Reference PasswordEntry}}"/>
+                </Entry.Behaviors>
+                </Entry>
+            <Button Text="Continue" Clicked="Button_Clicked"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
