@@ -32,7 +32,7 @@
                     </xct:MultiValidationBehavior>
                   </Entry.Behaviors>
             </Entry>
-            <Entry Placeholder="Repeat Password" IsPassword="True">
+            <Entry Placeholder="Repeat Password" IsPassword="True" Text="{Binding Wallet.Password}">
                 <Entry.Behaviors>
                     <xct:RequiredStringValidationBehavior
                          x:Name="RepeatPasswordValidator"
@@ -40,7 +40,7 @@
                         RequiredString="{Binding Text, Source={x:Reference PasswordEntry}}"/>
                 </Entry.Behaviors>
                 </Entry>
-            <Button Text="Continue" Clicked="Button_Clicked"/>
+            <Button Text="Continue" Command="{Binding BuildWalletCommand}"/>
 
 
         </StackLayout>

@@ -16,6 +16,8 @@
     <PackageReference Include="CardanoSharp.Wallet" Version="0.2.6" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="1.2.0" />
     <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.2083" />
+    <PackageReference Include="System.Text.Json" Version="5.0.2" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="CardanoSharp.Wallet" />
@@ -24,10 +26,16 @@
     <None Remove="ViewModels\" />
     <None Remove="Xamarin.CommunityToolkit" />
     <None Remove="Xamarin.Forms.Visual.Material" />
+    <None Remove="Utils\" />
+    <None Remove="System.Text.Json" />
+    <None Remove="sqlite-net-pcl" />
+    <None Remove="Persistence\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="models\" />
     <Folder Include="views\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Persistence\" />
   </ItemGroup>
 </Project>

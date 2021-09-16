@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using BikeBlock.views;
 using BikeBlock.ViewModels;
+using BikeBlock.Persistence;
 
 namespace BikeBlock
 {
@@ -33,9 +34,10 @@ namespace BikeBlock
 
         static MainPageViewModel meetingsVM;
         static PageService pageService = new PageService();
-      
+        static SQLiteWalletStore walletStore =  new SQLiteWalletStore(DependencyService.Get<ISQLiteDb>());
+
         public static MainPageViewModel MainPageViewModel
-        => meetingsVM ?? (meetingsVM = new MainPageViewModel(pageService));
+        => meetingsVM ?? (meetingsVM = new MainPageViewModel(pageService, walletStore));
 
         
 

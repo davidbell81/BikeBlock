@@ -8,7 +8,24 @@
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Welcome to BikeBlock!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-       <Button Text="New Wallet" Command="{Binding CreateWalletCommand}"/>
+        <ListView ItemsSource="{Binding Wallets}" HasUnevenRows="true" SelectedItem="{Binding SelectedWallet, Mode=TwoWay}" BackgroundColor="#999999" >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell Height="100" >
+                    <Frame HasShadow="true" Margin="5" >
+                        
+                            <StackLayout  Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                                <Label TextColor="White" Text="{Binding Name}" HorizontalOptions="StartAndExpand" />
+                                
+
+                            </StackLayout>
+                            
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+       <Button Text="New Wallet" Command="{Binding NewWalletCommand}"/>
         <Button Text="Restore Wallet"/>
 
     </StackLayout>

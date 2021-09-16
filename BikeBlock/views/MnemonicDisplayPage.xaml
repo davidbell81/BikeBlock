@@ -3,8 +3,14 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BikeBlock"
-    x:Class="BikeBlock.views.MnemonicDisplayPage">
+    x:Class="BikeBlock.views.MnemonicDisplayPage"
+    Visual="Material">
     <ContentPage.Content>
-        
+        <StackLayout>
+        <Label Text="{Binding MnemonicText}"/>
+        <Label Text="Write down this mnemonic as it is the only way to recover your wallet"/>
+        <Label Text="Once you have written this mnemonic down and safely stored it click the continue button below"/>
+        <Button Text="Continue"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

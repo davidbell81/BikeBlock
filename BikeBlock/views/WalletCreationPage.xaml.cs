@@ -24,11 +24,6 @@ namespace BikeBlock.views
             
         }
 
-        void Button_Clicked(System.Object sender, System.EventArgs e)
-        {
-            
-            PasswordValidator.ForceValidate();
-            RepeatPasswordValidator.ForceValidate();
-        }
+        
     }
 }

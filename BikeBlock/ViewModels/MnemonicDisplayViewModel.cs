@@ -8,6 +8,14 @@ namespace BikeBlock.ViewModels
     {
         private IPageService _pageService;
 
+        public String MnemonicText {
+            get
+            {
+                return Wallet.Mnemonic.Words;
+            }
+            private set {
+            }
+        }
         public Wallet Wallet { get; set; } = new Wallet();
         public ICommand OkCommand
         {
