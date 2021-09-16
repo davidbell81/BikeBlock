@@ -8,6 +8,7 @@
     <ContentPage.Resources>
         <Style TargetType="Entry">
             <Setter Property="FontSize" Value="30" />
+            <Setter Property="BackgroundColor" Value="White" />
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             <Setter Property="TextColor" Value="Purple" />
         </Style>
