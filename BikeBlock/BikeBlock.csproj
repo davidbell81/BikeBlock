@@ -18,6 +18,7 @@
     <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.2083" />
     <PackageReference Include="System.Text.Json" Version="5.0.2" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="Blockfrost.Api" Version="0.0.4" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="CardanoSharp.Wallet" />
@@ -30,6 +31,7 @@
     <None Remove="System.Text.Json" />
     <None Remove="sqlite-net-pcl" />
     <None Remove="Persistence\" />
+    <None Remove="Blockfrost.Api" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="models\" />
